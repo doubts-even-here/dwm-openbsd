@@ -1,6 +1,6 @@
 # dwm - dynamic window manager
 # See LICENSE file for copyright and license details.
-
+# added `rm config.h` to line 46
 include config.mk
 
 SRC = drw.c dwm.c util.c
@@ -43,6 +43,7 @@ install: all
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	rm config.h
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
